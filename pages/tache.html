@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js"></script>
+    <title>Tâches</title>
+  </head>
+  <body onload="chargerLaPageTache();">
+    <div id="modal">
+      <form class="w-50" id="modifyform">
+        <fieldset>
+          <legend>Modifier une tâche</legend>
+          <div class="form-group">
+            <label for="1description" class="form-label">Description</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="1description"
+              placeholder="Entrer le nom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="1employe" class="form-label">Pour l'employé</label>
+            <select class="form-select" id="1employe"></select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Modifier</button>
+          <button
+            type="button"
+            class="btn btn-secondary mt-3"
+            onclick="annuler()"
+          >
+            Annuler
+          </button>
+        </fieldset>
+      </form>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">TP SR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./employe.html">Employés</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Tâches</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="ajouter-form">
+      <form class="w-50" onsubmit="ajouterTache(event)">
+        <fieldset>
+          <legend>Ajouter une tâche</legend>
+          <div class="form-group">
+            <label for="description" class="form-label mt-2">Description</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="description"
+              placeholder="Entrer le nom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="employe" class="form-label mt-2">Pour l'employé</label>
+            <select class="form-select" id="employe"></select>
+          </div>
+          <button type="submit" class="btn btn-primary my-3">Ajouter</button>
+        </fieldset>
+      </form>
+    </div>
+    <hr />
+    <div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id de la tâche</th>
+            <th scope="col">Description</th>
+            <th scope="col">Id de l'employé</th>
+            <th scope="col">modifier</th>
+            <th scope="col">supprimer</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

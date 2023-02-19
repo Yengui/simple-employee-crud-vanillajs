@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js"></script>
+    <title>Employés</title>
+  </head>
+  <body onload="chargerLaPageEmploye();">
+    <div id="modal">
+      <form class="w-50" id="modifyform">
+        <fieldset>
+          <legend>Modifier un employé</legend>
+          <div class="form-group">
+            <label for="1nom" class="form-label">Nom</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="1nom"
+              placeholder="Entrer le nom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="1prenom" class="form-label">Prenom</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="1prenom"
+              placeholder="Entrer le prenom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="1adresse" class="form-label">Adresse</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="1adresse"
+              placeholder="Entrer l'adresse"
+            />
+          </div>
+          <div class="form-group">
+            <label for="1num_compte" class="form-label">Numero de compte</label>
+            <input
+              required
+              type="number"
+              class="form-control"
+              id="1num_compte"
+              placeholder="Entrer le numero de compte"
+            />
+          </div>
+          <div class="form-group">
+            <label for="1grade" class="form-label">Grade</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="1grade"
+              placeholder="Entrer la grade"
+            />
+          </div>
+          <div class="form-group">
+            <label for="1superieur" class="form-label"
+              >Supérieur hiérarchique</label
+            >
+            <select class="form-select" id="1superieur"></select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Modifier</button>
+          <button
+            type="button"
+            class="btn btn-secondary mt-3"
+            onclick="annuler()"
+          >
+            Annuler
+          </button>
+        </fieldset>
+      </form>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">TP SR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Employés</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tache.html">Tâches</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="ajouter-form">
+      <form class="w-50" onsubmit="ajouterEmploye(event)">
+        <fieldset>
+          <legend>Ajouter un employé</legend>
+          <div class="form-group">
+            <label for="nom" class="form-label mt-2">Nom</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="nom"
+              placeholder="Entrer le nom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="prenom" class="form-label mt-2">Prenom</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="prenom"
+              placeholder="Entrer le prenom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="adresse" class="form-label mt-2">Adresse</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="adresse"
+              placeholder="Entrer l'adresse"
+            />
+          </div>
+          <div class="form-group">
+            <label for="num_compte" class="form-label mt-2"
+              >Numero de compte</label
+            >
+            <input
+              required
+              type="number"
+              class="form-control"
+              id="num_compte"
+              placeholder="Entrer le numero de compte"
+            />
+          </div>
+          <div class="form-group">
+            <label for="grade" class="form-label mt-2">Grade</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="grade"
+              placeholder="Entrer la grade"
+            />
+          </div>
+          <div class="form-group">
+            <label for="superieur" class="form-label mt-2"
+              >Supérieur hiérarchique</label
+            >
+            <select class="form-select" id="superieur">
+              <option value="">aucun</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary my-3">Ajouter</button>
+        </fieldset>
+      </form>
+    </div>
+    <hr />
+    <div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Numero de compte</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Supérieur hiérarchique</th>
+            <th scope="col">modifier</th>
+            <th scope="col">supprimer</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

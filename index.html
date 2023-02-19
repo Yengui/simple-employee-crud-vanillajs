@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script type="module" src="script.js"></script>
+    <title>Taches et Employés</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">TP SR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/employe.html">Employés</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/tache.html">Tâches</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="d-flex justify-content-around p-4">
+      <a
+        class="d-flex flex-column align-items-center"
+        href="./pages/employe.html"
+      >
+        <img
+          class="image1"
+          src="./images/man_working.svg"
+          alt="gestion d'employés"
+        />
+        <button type="button" class="btn btn-primary btn-lg">
+          Gestion d'employés
+        </button></a
+      >
+      <a
+        class="d-flex flex-column align-items-center"
+        href="./pages/tache.html"
+      >
+        <img
+          class="image2"
+          src="./images/Computer.svg"
+          alt="gestion d'employés"
+        />
+        <button type="button" class="btn btn-primary btn-lg">
+          Gestion de tâches
+        </button></a
+      >
+    </div>
+  </body>
+</html>
